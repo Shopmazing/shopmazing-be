@@ -23,17 +23,21 @@
 
   Main Page
 
- ![Main Page](/img/main-page.JPG)
+ ![Main Page](./img/main-page.JPG)
 
  Admin Page
 
- ![Admin Page](/img/admin.JPG)
+ ![Admin Page](./img/admin.JPG)
 
  About-us Page
 
- ![About-us](/img/about-us.JPG)
+ ![About-us](./img/about-us.JPG)
 
  ## Domain Modeling
 
- ![Domain Modeling 1](/img/Workflow3.png)
- ![Domain Modeling 2](/img/workFlow4.png)
+ ![Domain Modeling 1](./img/Workflow3.png)
+ ![Domain Modeling 2](./img/workFlow4.png)
+
+ ## Database Details
+
+ ![DB details](./img/Workflow6.png)

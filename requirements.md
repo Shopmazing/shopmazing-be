@@ -46,8 +46,8 @@ Front page render in sections, based on category or item type. Possibly include 
 4. Allow users to checkout which will clear the cart/update inventory levels.
 5. A backend to the store that will allow a admin to edit users and inventory. Including add/delete funtionality.
 
-![DataFlowImg1](/img/Workflow1.png)
-![DataFlowImg1](/img/workFlow2.png)
+![DataFlowImg1](./img/Workflow1.png)
+![DataFlowImg1](./img/workFlow2.png)
 
 ## Non-Functional Requirements
 1. Secturity
