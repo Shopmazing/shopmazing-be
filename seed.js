@@ -6,17 +6,7 @@ const { userInfo } = require('os');
 
 const seed = async () => {
     mongoose.connect(process.env.DB_URL);
-    const basicAdmin = new Admin({
-
-      });
-    await basicAdmin.save((err) => {
-      if (err) {
-    	console.error(err);
-    } else {
-      console.log('Saved basic Admin template.');
-    }
-    });
-
+    
     const fillerProduct = new Product({
         name: '',
         id: '',
@@ -35,10 +25,10 @@ const seed = async () => {
 			}
 		});
 
-    const basicUser = new SiteUser({
-
+    const starterUser = new SiteUser({
+      role: "admin"
     })
-		await basicUser.save((err) => {
+		await starterUser.save((err) => {
 			if (err) {
 				console.error(err);
 			} else {
