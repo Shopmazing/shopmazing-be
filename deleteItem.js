@@ -1,15 +1,14 @@
 'use strict'
 const Product = require ('./models/productModel.js');
 
-async function handleDeleteProduct(req,res){
-  const id = req.params.id
-  
+async function handleDeleteProduct(req, res){
   try {
-    const product = await product.findOne({_id: id}); 
-    if (!product) {
+    const id = req.params.id
+    const productDelete = await Product.findById(id); 
+    if (!productDelete) {
      res.status(400).send('No product');
     } else {
-      await Book.findByIdAndDelete(id);
+      await Product.findByIdAndDelete(id);
       res.status(200).send('Deleted product')
     }
     } catch (e) {

@@ -1,10 +1,9 @@
 'use strict'
+const Product = require('./models/productModel.js');
 
 async function handlePostProduct(req,res) {
-
-  const newProduct = { ...req.body}
   try {
-    let successProduct = await Product.create(newProduct);
+    let successProduct = await Product.create(req.body);
     if (successProduct) {
       res.status(200).send(successProduct);
     } else {

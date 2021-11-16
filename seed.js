@@ -6,7 +6,6 @@ const { userInfo } = require('os');
 
 const seed = async () => {
     mongoose.connect(process.env.DB_URL);
-    
     const fillerProduct = new Product({
         name: '',
         id: '',
@@ -26,7 +25,7 @@ const seed = async () => {
 		});
 
     const starterUser = new SiteUser({
-      role: "admin"
+			role: 'admin',
     })
 		await starterUser.save((err) => {
 			if (err) {
