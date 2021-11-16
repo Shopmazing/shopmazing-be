@@ -4,11 +4,11 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const handleDeleteProduct = require ('./deleteItem.js');
-const handlePostProduct = require ('./create.js');
-const handlePutProduct = require ('./putItem.js');
+const handleDeleteProduct = require('./deleteItem.js');
+const handlePostProduct = require('./create.js');
+const handlePutProduct = require('./putItem.js');
 const getProduct = require('./getProducts.js')
-// mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('Mongoose is connected'));
