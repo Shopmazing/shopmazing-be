@@ -8,7 +8,7 @@ const handleDeleteProduct = require('./deleteItem.js');
 const handlePostProduct = require('./create.js');
 const handlePutProduct = require('./putItem.js');
 const getProduct = require('./getProducts.js')
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('Mongoose is connected'));
@@ -23,12 +23,10 @@ app.use(express.json());
 
 app.get('/', getProduct);
 // app.get('/product', getProduct);
-app.get('/profile');
-app.get('/cart');
-app.get('/admin');
-app.post('/admin', handlePostProduct);
-app.delete('/admin/:id', handleDeleteProduct);
-app.put('/admin/:id', handlePutProduct);
+app.get('/users');
+app.post('/products', handlePostProduct);
+app.delete('/products/:id', handleDeleteProduct);
+app.put('/products/:id', handlePutProduct);
 
 
 
