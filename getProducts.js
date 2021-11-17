@@ -1,13 +1,14 @@
 'use strict'
-const { response } = require('express');
+const {response} = require('express');
 const Product = require('./models/productModel');
 
-async function getProduct(req, res){
+async function getProduct(req, res) {
   try {
-    const getDBProducts = await Product.find();
+    const getDBProducts = await Product.find({});
     if (getDBProducts) {
       res.status(200).send(getDBProducts);
     } else {
+      console.log(error);
       res.status(404).send('No Products');
     }
   } catch (error) {
