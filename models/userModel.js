@@ -1,8 +1,8 @@
 'use strict';
 const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
-	isAdmin: True,
-	email: 'jordano.fleming@gmail.com'
+  isAdmin: Boolean,
+  email: String,
 });
 
 const User = mongoose.model('User', userSchema);
