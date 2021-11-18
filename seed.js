@@ -3,6 +3,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const { userInfo } = require('os');
+const fakeProductData  = require('./data/fakeProduct.json')
+const fakeProduct = require('./models/productModel')
 
 const seed = async () => {
     mongoose.connect(process.env.DB_URL);
@@ -24,6 +26,16 @@ const seed = async () => {
 			}
 		});
 
+		for(let i = 0; i < fakeProductData.length; i++) {
+			 await fakeProduct.create({
+				name: fakeProductData[i].title,
+				category: fakeProductData[i].category,
+				description: fakeProductData[i].description,
+				image: fakeProductData[i].image,
+				price: fakeProductData[i].price,
+			 });
+		}
+
     const starterUser = new SiteUser({
 			role: 'admin',
     })
@@ -34,6 +46,7 @@ const seed = async () => {
 				console.log('Saved basic user.');
 			}
 		});
+		mongoose.disconnect();
 }
 
 seed();
