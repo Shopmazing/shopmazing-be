@@ -20,7 +20,7 @@ db.once('open', () => console.log('Mongoose is connected'));
 const PORT = process.env.PORT;
 const app = express();
 app.use(cors({
-  origin: process.env.AUTHORIZED_URL
+  'Access-Control-Allow-Origin': process.env.AUTHORIZED_URL
 }));
 app.use(express.json());
 
